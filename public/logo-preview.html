@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spark（星火）Logo 預覽</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #221910;
+      color: #ffffff;
+      padding: 40px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #f5a559 0%, #ee8c2b 50%, #d67a1f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 50px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #ee8c2b;
+    }
+
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .logo-card {
+      background: #332619;
+      border-radius: 16px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid rgba(238,140,43,0.2);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .logo-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(238,140,43,0.5);
+    }
+
+    .logo-card img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .logo-name {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .logo-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+    }
+
+    .size-demo {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .size-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #332619;
+      padding: 15px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(238,140,43,0.2);
+    }
+
+    .color-swatches {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+
+    .swatch {
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .swatch-color {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      margin: 0 auto 15px;
+      border: 2px solid rgba(255,255,255,0.2);
+    }
+
+    .swatch-name {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .swatch-hex {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      font-family: monospace;
+    }
+
+    .usage-rules {
+      background: #332619;
+      border-radius: 16px;
+      padding: 30px;
+      border: 1px solid rgba(238,140,43,0.2);
+    }
+
+    .usage-rules ul {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .usage-rules li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .usage-rules li:last-child {
+      border-bottom: none;
+    }
+
+    .do {
+      color: #22c55e;
+    }
+
+    .dont {
+      color: #ef4444;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #f5a559 0%, #ee8c2b 50%, #d67a1f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .logo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Spark（星火）Logo 套件</h1>
+    <p class="subtitle">「星星之火，可以燎原」- 點燃會自我增殖的人脈關係</p>
+
+    <!-- 主要 Logo -->
+    <div class="section">
+      <h2 class="section-title">📦 Logo 版本</h2>
+      <div class="logo-grid">
+        <div class="logo-card">
+          <img src="/logo-spark.svg" alt="Spark Logo - 深色背景" width="200" />
+          <div class="logo-name">logo-spark.svg</div>
+          <div class="logo-desc">主要 Logo（深色背景）<br>512×512px</div>
+        </div>
+        <div class="logo-card">
+          <img src="/logo-spark-light.svg" alt="Spark Logo - 淺色背景" width="200" />
+          <div class="logo-name">logo-spark-light.svg</div>
+          <div class="logo-desc">主要 Logo（淺色背景）<br>512×512px</div>
+        </div>
+        <div class="logo-card">
+          <img src="/icon-spark.svg" alt="Spark Icon" width="150" />
+          <div class="logo-name">icon-spark.svg</div>
+          <div class="logo-desc">圖示版（僅圖形）<br>256×256px</div>
+        </div>
+        <div class="logo-card">
+          <img src="/app-icon.svg" alt="App Icon" width="200" />
+          <div class="logo-name">app-icon.svg</div>
+          <div class="logo-desc">App 圖示<br>512×512px</div>
+        </div>
+        <div class="logo-card" style="background: linear-gradient(135deg, #221910 0%, #332619 100%);">
+          <img src="/logo-wordmark.svg" alt="Wordmark" width="400" />
+          <div class="logo-name">logo-wordmark.svg</div>
+          <div class="logo-desc">文字標誌<br>600×200px</div>
+        </div>
+        <div class="logo-card">
+          <img src="/favicon.svg" alt="Favicon" width="64" />
+          <div class="logo-name">favicon.svg</div>
+          <div class="logo-desc">網站圖示<br>32×32px</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 尺寸示範 -->
+    <div class="section">
+      <h2 class="section-title">📐 尺寸示範</h2>
+      <div class="size-demo">
+        <div class="size-item">
+          <img src="/icon-spark.svg" width="24" height="24" alt="24px" />
+          <span>24px</span>
+        </div>
+        <div class="size-item">
+          <img src="/icon-spark.svg" width="32" height="32" alt="32px" />
+          <span>32px</span>
+        </div>
+        <div class="size-item">
+          <img src="/icon-spark.svg" width="48" height="48" alt="48px" />
+          <span>48px</span>
+        </div>
+        <div class="size-item">
+          <img src="/icon-spark.svg" width="64" height="64" alt="64px" />
+          <span>64px</span>
+        </div>
+        <div class="size-item">
+          <img src="/icon-spark.svg" width="96" height="96" alt="96px" />
+          <span>96px</span>
+        </div>
+        <div class="size-item">
+          <img src="/icon-spark.svg" width="128" height="128" alt="128px" />
+          <span>128px</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 色彩 -->
+    <div class="section">
+      <h2 class="section-title">🌈 品牌色彩</h2>
+      <div class="color-swatches">
+        <div class="swatch" style="background: rgba(238,140,43,0.1);">
+          <div class="swatch-color" style="background: #f5a559;"></div>
+          <div class="swatch-name">Primary Light</div>
+          <div class="swatch-hex">#f5a559</div>
+        </div>
+        <div class="swatch" style="background: rgba(238,140,43,0.1);">
+          <div class="swatch-color" style="background: #ee8c2b;"></div>
+          <div class="swatch-name">Primary</div>
+          <div class="swatch-hex">#ee8c2b</div>
+        </div>
+        <div class="swatch" style="background: rgba(238,140,43,0.1);">
+          <div class="swatch-color" style="background: #d67a1f;"></div>
+          <div class="swatch-name">Primary Dark</div>
+          <div class="swatch-hex">#d67a1f</div>
+        </div>
+        <div class="swatch" style="background: rgba(34,25,16,0.3);">
+          <div class="swatch-color" style="background: #221910;"></div>
+          <div class="swatch-name">Background Dark</div>
+          <div class="swatch-hex">#221910</div>
+        </div>
+        <div class="swatch" style="background: rgba(34,25,16,0.3);">
+          <div class="swatch-color" style="background: #332619;"></div>
+          <div class="swatch-name">Surface Dark</div>
+          <div class="swatch-hex">#332619</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 使用規則 -->
+    <div class="section">
+      <h2 class="section-title">✅ 使用規範</h2>
+      <div class="usage-rules">
+        <ul>
+          <li><span class="do">✓</span> 使用 SVG 格式以保持最佳品質</li>
+          <li><span class="do">✓</span> 遵守最小尺寸規定（數位 24px）</li>
+          <li><span class="do">✓</span> 保持周圍有足夠的保護空間</li>
+          <li><span class="do">✓</span> 選擇正確的背景版本（深色/淺色）</li>
+          <li><span class="dont">✗</span> 不要拉伸或壓縮 Logo</li>
+          <li><span class="dont">✗</span> 不要更改 Logo 顏色</li>
+          <li><span class="dont">✗</span> 不要在雜亂背景上使用</li>
+          <li><span class="dont">✗</span> 不要低於最小尺寸使用</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 設計理念 -->
+    <div class="section">
+      <h2 class="section-title">💡 設計理念</h2>
+      <div class="usage-rules">
+        <p style="color: rgba(255,255,255,0.8); margin-bottom: 15px;">
+          <strong>核心火花：</strong>象徵「點燃」和「開始」，中央大火花代表核心價值
+        </p>
+        <p style="color: rgba(255,255,255,0.8); margin-bottom: 15px;">
+          <strong>小火花：</strong>代表「增殖效果」- 一個火花點燃更多火花
+        </p>
+        <p style="color: rgba(255,255,255,0.8); margin-bottom: 15px;">
+          <strong>連結線條：</strong>象徵人脈網絡的連結，從核心延伸到周圍
+        </p>
+        <p style="color: rgba(255,255,255,0.8);">
+          <strong>橘色漸層：</strong>象徵溫暖、能量、活力，代表火花的顏色
+        </p>
+      </div>
+    </div>
+
+    <!-- 頁尾 -->
+    <footer style="text-align: center; color: rgba(255,255,255,0.4); padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
+      <p>Spark（星火）™ - Ignite relationships that multiply.</p>
+      <p style="font-size: 14px; margin-top: 10px;">
+        詳細使用指南請參考 <a href="/LOGO_GUIDE.md" style="color: #ee8c2b;">LOGO_GUIDE.md</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

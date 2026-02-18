@@ -1,0 +1,1 @@
+function safeTimestampToIso(timestamp) { if (\!timestamp || typeof timestamp \!== 'number') return new Date().toISOString(); if (timestamp instanceof Date) { const time = timestamp.getTime(); if (isNaN(time) || \!isFinite(time)) return new Date().toISOString(); return timestamp.toISOString(); }

@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- 主色漸層：橘色系 -->
+    <linearGradient id="sparkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5a559;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ee8c2b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d67a1f;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 發光效果 -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 深色背景圓形 -->
+  <circle cx="256" cy="256" r="240" fill="#221910" />
+
+  <!-- 核心火花（中央大火花） -->
+  <g filter="url(#glow)">
+    <!-- 火花主體 -->
+    <path d="M256 120
+             C256 120, 280 180, 310 220
+             C340 260, 400 280, 400 280
+             C400 280, 340 300, 310 340
+             C280 380, 256 440, 256 440
+             C256 440, 232 380, 202 340
+             C172 300, 112 280, 112 280
+             C112 280, 172 260, 202 220
+             C232 180, 256 120, 256 120Z"
+          fill="url(#sparkGradient)" />
+
+    <!-- 火花內部高光 -->
+    <ellipse cx="256" cy="240" rx="40" ry="60"
+             fill="rgba(255,255,255,0.3)" />
+  </g>
+
+  <!-- 小火花（象徵增殖效果） -->
+  <g fill="url(#sparkGradient)">
+    <!-- 右上小火花 -->
+    <path d="M380 140
+             C380 140, 395 165, 415 175
+             C435 185, 460 180, 460 180
+             C460 180, 440 195, 435 215
+             C430 235, 435 255, 435 255
+             C435 255, 415 240, 395 235
+             C375 230, 355 235, 355 235
+             C355 235, 365 215, 370 195
+             C375 175, 380 140, 380 140Z"
+          opacity="0.8" />
+
+    <!-- 左下小火花 -->
+    <path d="M100 340
+             C100 340, 85 365, 65 375
+             C45 385, 20 380, 20 380
+             C20 380, 40 395, 45 415
+             C50 435, 45 455, 45 455
+             C45 455, 65 440, 85 435
+             C105 430, 125 435, 125 435
+             C125 435, 115 415, 110 395
+             C105 375, 100 340, 100 340Z"
+          opacity="0.8" />
+
+    <!-- 右下小火花 -->
+    <path d="M400 340
+             C400 340, 410 355, 425 360
+             C440 365, 455 360, 455 360
+             C455 360, 445 370, 442 380
+             C439 390, 442 400, 442 400
+             C442 400, 427 392, 415 390
+             C403 388, 392 392, 392 392
+             C392 392, 397 380, 398 370
+             C399 360, 400 340, 400 340Z"
+          opacity="0.6" />
+  </g>
+
+  <!-- 連結線條（象徵人脈網絡） -->
+  <g stroke="rgba(238,140,43,0.3)" stroke-width="2" fill="none">
+    <line x1="256" y1="280" x2="380" y2="180" />
+    <line x1="256" y1="280" x2="100" y2="380" />
+    <line x1="256" y1="280" x2="400" y2="360" />
+
+    <!-- 連結點 -->
+    <circle cx="380" cy="180" r="4" fill="#ee8c2b" stroke="none" />
+    <circle cx="100" cy="380" r="4" fill="#ee8c2b" stroke="none" />
+    <circle cx="400" cy="360" r="3" fill="#ee8c2b" stroke="none" />
+  </g>
+
+  <!-- Spark 文字 -->
+  <text x="256" y="490"
+        font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif"
+        font-size="32"
+        font-weight="800"
+        fill="#ffffff"
+        text-anchor="middle"
+        letter-spacing="8">
+    SPARK
+  </text>
+</svg>

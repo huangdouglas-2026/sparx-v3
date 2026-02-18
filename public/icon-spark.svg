@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <!-- 主色漸層：橘色系 -->
+    <linearGradient id="sparkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5a559;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ee8c2b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d67a1f;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 發光效果 -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 核心火花（中央大火花） -->
+  <g filter="url(#glow)">
+    <!-- 火花主體 -->
+    <path d="M128 40
+             C128 40, 152 85, 175 115
+             C198 145, 240 160, 240 160
+             C240 160, 198 175, 175 205
+             C152 235, 128 280, 128 280
+             C128 280, 104 235, 81 205
+             C58 175, 16 160, 16 160
+             C16 160, 58 145, 81 115
+             C104 85, 128 40, 128 40Z"
+          fill="url(#sparkGradient)" />
+
+    <!-- 火花內部高光 -->
+    <ellipse cx="128" cy="115" rx="25" ry="40"
+             fill="rgba(255,255,255,0.35)" />
+  </g>
+
+  <!-- 小火花（象徵增殖效果） -->
+  <g fill="url(#sparkGradient)">
+    <!-- 右上小火花 -->
+    <path d="M200 60
+             C200 60, 210 80, 225 88
+             C240 96, 260 92, 260 92
+             C260 92, 245 102, 242 118
+             C239 134, 242 150, 242 150
+             C242 150, 227 140, 212 136
+             C197 132, 182 136, 182 136
+             C182 136, 189 120, 192 105
+             C195 90, 200 60, 200 60Z"
+          opacity="0.85" />
+
+    <!-- 左下小火花 -->
+    <path d="M56 180
+             C56 180, 46 200, 31 208
+             C16 216, -4 212, -4 212
+             C-4 212, 11 222, 14 238
+             C17 254, 14 270, 14 270
+             C14 270, 29 260, 44 256
+             C59 252, 74 256, 74 256
+             C74 256, 67 240, 64 225
+             C61 210, 56 180, 56 180Z"
+          opacity="0.85" />
+  </g>
+
+  <!-- 連結線條（象徵人脈網絡） -->
+  <g stroke="rgba(238,140,43,0.4)" stroke-width="3" fill="none">
+    <line x1="128" y1="160" x2="200" y2="90" />
+    <line x1="128" y1="160" x2="56" y2="210" />
+
+    <!-- 連結點 -->
+    <circle cx="200" cy="90" r="5" fill="#ee8c2b" stroke="none" />
+    <circle cx="56" cy="210" r="5" fill="#ee8c2b" stroke="none" />
+  </g>
+</svg>

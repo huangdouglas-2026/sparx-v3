@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200">
+  <defs>
+    <!-- 主色漸層：橘色系 -->
+    <linearGradient id="sparkGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f5a559;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ee8c2b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d67a1f;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 火花圖示定義 -->
+    <symbol id="sparkIcon" viewBox="0 0 60 80">
+      <path d="M30 10
+               C30 10, 38 25, 45 35
+               C52 45, 60 50, 60 50
+               C60 50, 52 55, 45 65
+               C38 75, 30 90, 30 90
+               C30 90, 22 75, 15 65
+               C8 55, 0 50, 0 50
+               C0 50, 8 45, 15 35
+               C22 25, 30 10, 30 10Z"
+            fill="url(#sparkGradient)" />
+    </symbol>
+  </defs>
+
+  <!-- 背景（可選，用於深色背景） -->
+  <rect width="600" height="200" fill="#221910" rx="16" />
+
+  <!-- Spark 圖示（左側） -->
+  <use href="#sparkIcon" x="30" y="55" width="70" height="93" />
+
+  <!-- SPARK 文字 -->
+  <text x="130" y="125"
+        font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="72"
+        font-weight="800"
+        fill="#ffffff"
+        letter-spacing="4">
+    SPARK
+  </text>
+
+  <!-- 星火 中文文字 -->
+  <text x="470" y="125"
+        font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif"
+        font-size="36"
+        font-weight="700"
+        fill="#ee8c2b"
+        letter-spacing="8">
+    星火
+  </text>
+
+  <!-- 標語（小字） -->
+  <text x="130" y="160"
+        font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif"
+        font-size="14"
+        font-weight="500"
+        fill="rgba(255,255,255,0.5)"
+        letter-spacing="2">
+    Ignite relationships that multiply
+  </text>
+</svg>
