@@ -63,7 +63,8 @@ export const emailSyncScheduler = {
       .from('social_connections')
       .select('*')
       .eq('platform', 'google')
-      .is('access_token', null, { inverted: true });
+      .filter('access_token', 'is', null)
+      .filter('access_token', 'is', undefined);
 
     if (error) {
       console.error('❌ Failed to fetch connections:', error);
