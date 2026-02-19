@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { ContactEditor } from '@/components/network';
 import type { DashboardContact } from '@/types';
 
-export default function NewContactPage() {
+function NewContactContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [scannedData, setScannedData] = useState<Partial<DashboardContact> | null>(null);
@@ -52,5 +52,13 @@ export default function NewContactPage() {
         onCancel={handleCancel}
       />
     </div>
+  );
+}
+
+export default function NewContactPage() {
+  return (
+    <Suspense fallback={<div className="p-6">載入中...</div>}>
+      <NewContactContent />
+    </Suspense>
   );
 }
