@@ -1,0 +1,39 @@
+name: Email Auto-Sync
+
+# 每小時執行一次自動同步
+on:
+  schedule:
+    - cron: '0 * * * *'  # 每小時的第 0 分鐘執行
+  workflow_dispatch:  # 允許手動觸發
+
+jobs:
+  sync:
+    name: Sync Social Media Emails
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Trigger email sync
+        run: |
+          echo "Triggering batch email sync..."
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -H "x-cron-secret: ${{ secrets.CRON_SECRET }}" \
+            "${{ secrets.VERCEL_URL }}/api/sync/batch"
+
+      - name: Report result
+        if: always()
+        run: |
+          echo "✅ Email sync completed"
+          echo "Next run: $(date -d '+1 hour' -u '+%Y-%m-%d %H:%M:%S UTC')"
