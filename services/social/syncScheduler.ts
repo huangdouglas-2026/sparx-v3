@@ -1,7 +1,7 @@
 import { linkedinService } from './linkedin';
 import { genAIService } from '../geminiService';
 import { createClient } from '@/lib/supabase/client';
-import type { DashboardContact, SocialActivity } from '@/types';
+import type { DashboardContact, SocialActivity, SocialPlatform } from '@/types';
 
 /**
  * Social Sync Scheduler
@@ -82,7 +82,7 @@ export const syncScheduler = {
 
       // Get current user's profile to verify token
       const profile = await linkedinService.getProfile(accessToken);
-      console.log('✅ LinkedIn profile verified:', profile.localizedFirstName);
+      console.log('✅ LinkedIn profile verified:', profile.given_name);
 
       // Sync user's own posts
       const posts = await linkedinService.getOwnPosts(accessToken);
@@ -330,17 +330,19 @@ ${content}
 
       const activityData: Partial<SocialActivity> = {
         user_id: userId,
-        platform,
+        platform: platform as SocialPlatform,
         activity_id: activity.id || activity.urn || '',
         activity_type: activity.lifecycleState || 'unknown',
         content,
         url: activity.url || '',
         metadata: activity,
-        impact: importantInfo ? {
-          importance: importantInfo.importance,
-          reason: importantInfo.reason,
-          suggestedAction: importantInfo.suggestedAction,
-        } : null,
+        ...(importantInfo && {
+          impact: {
+            importance: importantInfo.importance,
+            reason: importantInfo.reason,
+            suggestedAction: importantInfo.suggestedAction,
+          },
+        }),
         platform_created_at: activity.created?.time || new Date().toISOString(),
         synced_at: new Date().toISOString(),
       };
