@@ -90,7 +90,7 @@ export async function GET(request: NextRequest) {
     console.log('✅ LinkedIn profile fetched:', { sub: profile.sub, email: profile.email_address });
 
     // Store token in database
-    const supabase = createClient();
+    const supabase = await createClient();
     const { data: { user }, error: authError } = await supabase.auth.getUser();
 
     if (authError) {
