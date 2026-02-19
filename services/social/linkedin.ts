@@ -487,7 +487,7 @@ export const linkedinService = {
 
     const { data } = await supabase
       .from('social_connections')
-      .select('access_token, expires_at')
+      .select('access_token, expires_at, refresh_token')
       .eq('user_id', user.id)
       .eq('platform', 'linkedin')
       .single();
