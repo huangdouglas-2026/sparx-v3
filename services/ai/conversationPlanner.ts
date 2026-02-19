@@ -156,6 +156,8 @@ ${platformContext}
           company: contact.company || '',
           lastContact: contact.lastContact || '',
           category: contact.category || 'weekly',
+          industry: contact.industry || '',
+          metAt: contact.metAt || '',
         },
         story: {
           id: story.id,
