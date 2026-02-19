@@ -274,7 +274,10 @@ export const scanBusinessCard = async (base64Image: string): Promise<Partial<Das
 
   try {
     const result = await ai.generateContent({
-      contents: [{ parts: [imagePart, textPart] }],
+      contents: [{
+        role: 'user',
+        parts: [imagePart, textPart]
+      }],
       generationConfig: {
         responseMimeType: 'application/json',
         responseSchema: {
