@@ -97,7 +97,7 @@ export const emailSyncScheduler = {
       // Process all users in this batch in parallel
       const batchPromises = batch.map(async (connection) => {
         try {
-          const userResult = await this.syncUser(connection.user_id, connection.access_token);
+          const userResult = await this.syncUser(connection.user_id);
           return {
             success: true,
             userId: connection.user_id,
