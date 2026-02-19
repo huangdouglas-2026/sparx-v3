@@ -152,6 +152,11 @@ ${platformContext}
           name: contact.name,
           title: contact.title,
           company: contact.company || '',
+          avatarUrl: contact.avatar_url || null,
+          lastContact: contact.last_contact || null,
+          category: contact.category || null,
+          industry: contact.industry || null,
+          metAt: contact.met_at || null,
         },
         story: {
           id: story.id,
