@@ -118,7 +118,7 @@ export const emailSyncScheduler = {
 
       // Aggregate results
       for (const batchResult of batchResults) {
-        if (batchResult.success) {
+        if (batchResult.success && batchResult.result) {
           result.processed += batchResult.result.processed;
           result.linkedin += batchResult.result.linkedin;
           result.facebook += batchResult.result.facebook;
