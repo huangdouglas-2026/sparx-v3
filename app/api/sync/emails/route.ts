@@ -1,5 +1,5 @@
 import { createClient as createSupabaseServerClient } from '@/lib/supabase/server';
-import { emailSyncScheduler } from '@/services/social';
+import { emailSyncScheduler } from '@/services/social/emailSyncScheduler';
 import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
