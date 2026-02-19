@@ -210,9 +210,15 @@ ${platformContext}
     return {
       contact: {
         id: contact.id,
+        user_id: contact.user_id || '',
         name: contact.name,
-        title: contact.title,
+        avatarUrl: contact.avatarUrl || '',
+        title: contact.title || '',
         company: contact.company || '',
+        lastContact: contact.lastContact || '',
+        category: contact.category || 'weekly',
+        industry: contact.industry || '',
+        metAt: contact.metAt || '',
       },
       story,
       platform,
