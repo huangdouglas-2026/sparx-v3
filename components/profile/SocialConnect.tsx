@@ -84,7 +84,7 @@ export function SocialConnect({ onConnected }: SocialConnectProps) {
         .eq('user_id', user.id)
         .gte('created_at', new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString());
 
-      setSyncStatus(prev => ({ ...prev, count }));
+      setSyncStatus(prev => ({ ...prev, count: count ?? undefined }));
     } catch (error) {
       console.error('Error loading notifications:', error);
     }
