@@ -149,14 +149,23 @@ ${platformContext}
       return {
         contact: {
           id: contact.id,
+          user_id: contact.user_id || '',
           name: contact.name,
-          title: contact.title,
-          company: contact.company || '',
-          avatarUrl: contact.avatar_url || null,
-          lastContact: contact.last_contact || null,
-          category: contact.category || null,
-          industry: contact.industry || null,
-          metAt: contact.met_at || null,
+          avatar_url: contact.avatar_url || undefined,
+          title: contact.title || undefined,
+          company: contact.company || undefined,
+          intelligence: {
+            interests: [],
+            recent_activity_summary: '',
+          },
+          relationship: {
+            score: 0,
+            stage: 'stranger',
+            last_interaction: '',
+            interaction_frequency: 0,
+            response_rate: 0,
+            mutual_topics: [],
+          },
         },
         story: {
           id: story.id,
